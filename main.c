@@ -16,6 +16,8 @@ void	open_and_read(char	*file)
 
 	fd = 1;
 	fd = open(file, O_RDONLY);
+	if (fd == -1)
+		fd = 0;
 	i = 1;
 	while (1)
 	{
