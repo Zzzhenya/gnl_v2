@@ -8,10 +8,11 @@
 #include "get_next_line.h"
 //extern int errno;
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	int 	fd;
+	int		fd;
 	char	*ptr;
+	int		i;
 
 	fd = 1;
 	if (argc < 2)
@@ -21,12 +22,12 @@ int main(int argc, char **argv)
 	else if (argc == 2)
 	{
 		fd = open(argv[1], O_RDONLY);
-		int i = 1;
+		i = 1;
 		while (1)
 		{
 			ptr = get_next_line(fd);
 			if (ptr == NULL)
-				break;
+				break ;
 			printf("[%i]:%i:%s", fd, i, ptr);
 			free(ptr);
 			ptr = NULL;

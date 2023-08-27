@@ -3,7 +3,7 @@
 char	*read_from_file(int fd, char *carry)
 {
 	char	*ptr;
-	int     bytes;
+	int		bytes;
 
 	bytes = 42;
 	ptr = malloc (sizeof(char) * (BUFFER_SIZE + 1));
@@ -42,7 +42,7 @@ char	*gnl_get_line(char	*carry)
 	line = malloc(sizeof(char) * (i + 1));
 	if (!line)
 	{
-		free (carry);
+		//free (carry);
 		return (NULL);
 	}
 	ft_strlcpy(line, carry, i + 1);
