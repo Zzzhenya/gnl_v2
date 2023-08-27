@@ -31,7 +31,7 @@ char	*ft_strjoin(char *s1, char const *s2)
 	if (!s1)
 	{
 		s1 = malloc(sizeof(char) * 1);
-		if(!s1)
+		if (!s1)
 			return (NULL);
 		s1[0] = '\0';
 	}

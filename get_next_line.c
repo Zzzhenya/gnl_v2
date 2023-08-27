@@ -42,7 +42,6 @@ char	*gnl_get_line(char	*carry)
 	line = malloc(sizeof(char) * (i + 1));
 	if (!line)
 	{
-		//free (carry);
 		return (NULL);
 	}
 	ft_strlcpy(line, carry, i + 1);
@@ -62,11 +61,11 @@ char	*gnl_get_carry(char	*carry)
 		return (NULL);
 	}
 	lb = ft_strchr(carry, '\n');
-	i = (lb - carry) / sizeof(char);
-	temp = malloc(sizeof(char) * (ft_strlen(carry) - i + 1));
+	i = ft_strlen(lb + 1) + 1;
+	temp = malloc(sizeof(char) * i);
 	if (!temp)
 		return (NULL);
-	ft_strlcpy(temp, lb + 1, ft_strlen(lb + 1) + 1);
+	ft_strlcpy(temp, lb + 1, i);
 	free(carry);
 	return (temp);
 }
