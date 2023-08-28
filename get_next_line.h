@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sde-silv <sde-silv@student.42berlin.de>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/28 15:07:00 by sde-silv          #+#    #+#             */
+/*   Updated: 2023/08/28 15:07:15 by sde-silv         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <stddef.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1

@@ -1,12 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sde-silv <sde-silv@student.42berlin.de>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/28 15:08:08 by sde-silv          #+#    #+#             */
+/*   Updated: 2023/08/28 15:08:23 by sde-silv         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <stddef.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1
+# endif
+
+# ifndef FD_MAX
+#  define FD_MAX 1024
 # endif
 
 char	*get_next_line(int fd);

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sde-silv <sde-silv@student.42berlin.de>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/28 15:07:49 by sde-silv          #+#    #+#             */
+/*   Updated: 2023/08/28 15:08:01 by sde-silv         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line_bonus.h"
 
 char	*read_from_file(int fd, char *carry)
@@ -73,10 +85,10 @@ char	*gnl_get_carry(char	*carry)
 char	*get_next_line(int fd)
 {
 	char			*line;
-	static char		*carry[2560];
+	static char		*carry[FD_MAX];
 
 	line = NULL;
-	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 2560)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > FD_MAX)
 		return (NULL);
 	carry[fd] = read_from_file(fd, carry[fd]);
 	if (!carry[fd])

@@ -1,12 +1,29 @@
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sde-silv <sde-silv@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/28 15:10:09 by sde-silv          #+#    #+#             */
+/*   Updated: 2023/08/28 15:11:56 by sde-silv         ###   ########.fr       */
+/*                                                  	                          */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <fcntl.h>
 #include <errno.h>
-#include <stdlib.h>
-#include <string.h>
 #include <limits.h>
 #include "get_next_line.h"
 //#include "get_next_line_bonus.h"
+
+char	*print_line(int fd, int i, char	*ptr)
+{
+	printf("[%i]:%i:%s", fd, i, ptr);
+	free(ptr);
+	ptr = NULL;
+	return (ptr);
+}
 
 void	open_and_read(char	*file)
 {
@@ -24,9 +41,7 @@ void	open_and_read(char	*file)
 		ptr = get_next_line(fd);
 		if (ptr == NULL)
 			break ;
-		printf("[%i]:%i:%s", fd, i, ptr);
-		free(ptr);
-		ptr = NULL;
+		ptr = print_line(fd, i, ptr);
 		i++;
 	}
 	close (fd);
@@ -50,17 +65,9 @@ void	open_read_two(char	*file1, char	*file2)
 		if (ptr1 == NULL && ptr2 == NULL)
 			break ;
 		if (ptr1)
-		{
-			printf("[%i]:%i:%s", fd1, i, ptr1);
-			free(ptr1);
-			ptr1 = NULL;
-		}
+			ptr1 = print_line(fd1, i, ptr1);
 		if (ptr2)
-		{
-			printf("[%i]:%i:%s", fd2, i, ptr2);
-			free(ptr2);
-			ptr2 = NULL;
-		}
+			ptr2 = print_line(fd2, i, ptr2);
 		i++;
 	}
 	close(fd1);

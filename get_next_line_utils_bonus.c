@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sde-silv <sde-silv@student.42berlin.de>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/28 15:08:37 by sde-silv          #+#    #+#             */
+/*   Updated: 2023/08/28 15:09:52 by sde-silv         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line_bonus.h"
 
 size_t	ft_strlen(const char *s)
@@ -52,7 +64,7 @@ char	*ft_strjoin(char *s1, char const *s2)
 }
 
 size_t	ft_strlcpy(char *dest, char const *src, size_t size)
-{	
+{
 	size_t	i;
 
 	i = 0;
